@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Daily History — History of Georgia{% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Rubik', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        background: #0f0f0f; /* dark background */
+        color: #eee;
+        line-height: 1.65;
+    }
+
+    .daily-card {
+        background: #ffffff; /* white cards */
+        color: #222;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        margin-bottom: 20px;
+        transition: 0.3s;
+    }
+
+    .daily-card:hover {
+        box-shadow: 0 12px 30px rgba(245, 194, 139, 0.6);
+        transform: translateY(-3px);
+    }
+
+    .see-more-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 8px 20px;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #fff;
+        background-color: #f5c28b;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .see-more-btn:hover {
+        background-color: #e0a96b;
+    }
+</style>
+
+<div class="container" style="margin-top: 90px; max-width: 980px;">
+
+    <h1 style="color: #f5c28b; font-family: 'Merriweather', serif; margin-bottom: 28px;">
+        Daily History — Ancient Georgia
+    </h1>
+
+    <!-- Day 1 -->
+    <div class="daily-card">
+        <h3 style="color: #7a3e1a;">Day 1: Foundation of Iberia</h3>
+        <p>
+            In the 4th century BC, the Kingdom of Iberia (Kartli) began to unify the eastern Georgian tribes under a centralized monarchy.
+            King Pharnavaz I is credited with establishing the first royal dynasty, creating governmental positions, and instituting Georgian coinage.
+        </p>
+        {% if session.logged_in %}
+            <a href="https://en.wikipedia.org/wiki/Kingdom_of_Iberia" target="_blank" class="see-more-btn">See More</a>
+        {% endif %}
+    </div>
+
+    <!-- Day 2 -->
+    <div class="daily-card">
+        <h3 style="color: #7a3e1a;">Day 2: Colchis and Trade</h3>
+        <p>
+            The western kingdom of Colchis was renowned for its wealth and trade in metals and gold.
+            Greek traders from the Black Sea visited Colchis, and it became famous in mythology as the destination of Jason and the Argonauts seeking the Golden Fleece.
+        </p>
+        {% if session.logged_in %}
+            <a href="https://www.worldhistory.org/article/1192/colchis--iberia-in-antiquity/" target="_blank" class="see-more-btn">See More</a>
+        {% endif %}
+    </div>
+
+    <!-- Day 3 -->
+    <div class="daily-card">
+        <h3 style="color: #7a3e1a;">Day 3: Early Conflicts</h3>
+        <p>
+            During the 3rd century BC, Iberia and Colchis faced invasions from neighboring tribes and empires, including the Persians and local Caucasian tribes.
+            These conflicts helped shape the political and military structures of early Georgian kingdoms.
+        </p>
+        {% if session.logged_in %}
+            <a href="https://en.wikipedia.org/wiki/List_of_battles_involving_Georgia_(country)" target="_blank" class="see-more-btn">See More</a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Logged In — History of Georgia{% endblock %}
+
+{% block content %}
+<style>
+    .success-box {
+        max-width: 500px;
+        margin: 100px auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+    .success-box h1 {
+        color: #28a745;
+        margin-bottom: 20px;
+    }
+    .btn-main {
+        background: #198754;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+    .btn-main:hover {
+        background: #157347;
+    }
+</style>
+
+<div class="container">
+    <div class="success-box">
+        <h1>✅ You are logged in!</h1>
+        <p>Welcome, {{ username }}.</p>
+        <a href="/" class="btn-main">Go to Main Page</a>
+    </div>
+</div>
+{% endblock %}

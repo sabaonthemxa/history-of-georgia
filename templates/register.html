@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Register — History of Georgia{% endblock %}
+
+{% block content %}
+
+<style>
+    .login-card {
+        max-width: 520px;
+        padding: 45px;
+        border-radius: 18px;
+        background-color: #ffffff;
+        box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+        transform: scale(1.05);
+        margin-top: 90px;
+    }
+
+    .btn-login {
+        background-color: #198754;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px;
+    }
+
+    .btn-login:hover {
+        background-color: #157347;
+    }
+</style>
+
+<div class="container d-flex justify-content-center">
+    <div class="login-card">
+        <h2 class="text-center mb-4">Register</h2>
+
+        {% if error %}
+            <div style="color: red; font-size: 14px; margin-bottom: 10px;">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST" action="/register">
+            {{ form.csrf_token }}
+
+            <div class="mb-4">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control", placeholder="Enter email") }}
+                {% for err in form.email.errors %}
+                    <div style="color: red; font-size: 14px; margin-top: 5px;">
+                        {{ err }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-4">
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control", placeholder="Enter password") }}
+                {% for err in form.password.errors %}
+                    <div style="color: red; font-size: 14px; margin-top: 5px;">
+                        {{ err }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="mb-4">
+                {{ form.confirm_password.label(class="form-label") }}
+                {{ form.confirm_password(class="form-control", placeholder="Repeat password") }}
+                {% for err in form.confirm_password.errors %}
+                    <div style="color: red; font-size: 14px; margin-top: 5px;">
+                        {{ err }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            {{ form.submit(class="btn btn-login w-100") }}
+        </form>
+
+        <p class="text-center mt-4">
+            Already have an account? <a href="/login" class="text-success fw-semibold">Login</a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}

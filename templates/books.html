@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Exclusive Books — History of Georgia{% endblock %}
+
+{% block content %}
+<div class="container" style="margin-top: 90px; max-width: 980px;">
+
+    <h1 style="color: #f5c28b; font-family: 'Merriweather', serif; margin-bottom: 28px; text-align: center;">Books Section</h1>
+
+    <!-- Book 1 -->
+    <div class="daily-card" style="background: #222; color: #eee; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); margin-bottom: 20px;">
+        <h3 style="color: #f5c28b;">ukarkasho khmlebi</h3>
+        <p>„ukarkasho khmlebi“ mkhat’vrulad (dok’ument’uri p’rozis zhanrshi) dats’erili sakartvelos ist’oriaa, igi mogvitkhrobs kartveli khalkhis tavgadasavals skhva „akhlobel“ da „shorebel” khalkhebtan urtiertobis ponze. avt’ori emq’areba dzveli da akhali saist’orio mts’erlobis mights’evebs („kartlis tskhovreba“, dzveli kartuli mts’erlobis usachinoesi dzeglebi, elinur-elinist’uri, romaul-latinuri da bizant’iuri ts’q’aroebi, evrop’el da aziel avt’orta tsnobebi, akhali drois kartuli ist’oriograpiis metsnieruli monap’ovarni).
+Show more
+470
+“Untarnished Swords” is a fictionalized (documentary prose) history of Georgia, telling us about the adventures of the Georgian people against the backdrop of their relations with other “nearby” and “distant” peoples. The author draws on the achievements of ancient and modern historical writing (“The Life of Kartli”, the most prominent monuments of ancient Georgian writing, Hellenistic, Roman-Latin and Byzantine sources, references from European and Asian authors, scientific achievements of modern Georgian historiography).</p>
+        {% if session.get("logged_in") %}
+            <a href="https://dspace.nplg.gov.ge/handle/1234/87843" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f5c28b; color: #222; border-radius: 8px; text-decoration: none; font-weight: bold;">Click to Read</a>
+        {% endif %}
+    </div>
+
+    <!-- Book 2 -->
+    <div class="daily-card" style="background: #222; color: #eee; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); margin-bottom: 20px;">
+        <h3 style="color: #f5c28b;">kartlis ckhovreba</h3>
+        <p>The Chronicles consist of a series of distinct texts dating from the 9th to the 14th century. The dating of these works as well as the identification of their authors (e.g., Leonti Mroveli and Juansheriani) have been a subject of scholarly debates. Although many scholars in Georgia still propose an 11th-century dating for the first redaction of the corpus, the increasing number of modern experts has accepted Professor Cyril Toumanoff's hypothesis that the earliest texts of Kartlis Tskhovreba were composed c. 800.</p>
+        {% if session.get("logged_in") %}
+            <a href="https://dspace.nplg.gov.ge/handle/1234/315448" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f5c28b; color: #222; border-radius: 8px; text-decoration: none; font-weight: bold;">Click to Read</a>
+        {% endif %}
+    </div>
+
+    <!-- Book 3 -->
+    <div class="daily-card" style="background: #222; color: #eee; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); margin-bottom: 20px;">
+        <h3 style="color: #f5c28b;">vepkhis tkaosani</h3>
+        <p>The Knight in the Leopard's Skin is the only surviving poem by the 12th-century Georgian poet Shota Rustaveli . It consists of a prologue, main part, and epilogue. In terms of content, The Knight in the Leopard's Skin is a complex work; it tells two parallel stories—one about Arabia and one about India—but both are connected in plot. The poem is rich in characters. It is written in the style of a shirley , in a hexameter.</p>
+        {% if session.get("logged_in") %}
+            <a href="https://drive.google.com/file/d/0BwCMyTECcJPnTGk3WjY0VUpaMTg/view?resourcekey=0-B-tEOPzvFUx-W0GWlMV_EA" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #f5c28b; color: #222; border-radius: 8px; text-decoration: none; font-weight: bold;">Click to Read</a>
+        {% endif %}
+    </div>
+
+</div>
+
+<style>
+.daily-card:hover {
+    box-shadow: 0 12px 30px rgba(245, 194, 139, 0.6);
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+</style>
+{% endblock %}
